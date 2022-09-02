@@ -17,7 +17,7 @@ To run the application:
 2. The application may take a short while to initialize!
 3. The GUI should now be initialized
 4. First, open your data under the top menubar: file->open
-5. Select your data (excel files only .xslx)
+5. Select your data (excel files only .xslx, formatted as a single mass column with no header)
 6. Example data provided for reference
 7. Select your solvent in the solvent dropdown box to the right of the listed
    default temperature. This will fill the solvent box with your selected 
@@ -38,3 +38,25 @@ FILE WILL APPEND THE DATA TYPE TO THE ORIGINAL FILE NAME.
 15. To start another session, simply navigate to file->New Session
 16. To exit close the window or navigate to file->Exit
 17. Additional information is stored under the about tab
+
+
+Interpretation of Results:
+This program calculates results of your pores over the time range of the pore draining input to when the calculated diameter falls below 4 nm.
+
+The results file gives the following data:
+
+Average Pore Diameter (nm) - An average of all determined diameters over the range. 
+Average Surface Area (M^2) - An average of all determined pore surface area measurments over the range.
+Average Specific surface Area (M^2/g) - Average surface area divided by the total mass lost over the range.
+Latent Slope (mol/s^2) - Slope of the free standing layer evaporation over the input free standing layer range.
+Latent Standard Deviation - Standard deviation of evaporation values over the input free standing layer range.
+Pore Draining (mol/s) - evaporation rate at which pore drainng starts, equal to the average evaporation rate of the standing layer minus three standard deviations.
+Start of Pore Draining (s) - Time point where Pore Draining intersects with the evaporation curve.
+Total Mass loss (g) - The total mass evaporated over the range.
+Total Void Volume (M^3) - Volume that was evaporated over the range.
+INST Filtered Diameters (nm) - Instant diameter calculated at each time point using the evaporation rate over the range. (cut off below 4nm)
+Average Evaporation rate (mol/s) - All Evaporation rate data averaged with a n = 11
+Pore Percentage (%) - The Percentage of each pore in the sample. Each value corresponds to the Diameter (nm) results line.
+Mass loss (g) - The total mass evaporated at each Diameter (nm).
+Diameter (nm) - Diameters from 5nm to 300nm. Each recorded diameter in the program is grouped to these bins with a 2.5nm tolereance. Ex: 4nm = 5nm , 7.3 nm = 5nm.
+Variables - Values you input into the program.
